@@ -16,5 +16,7 @@
     <orderEntry type="library" name="bower_components m2m" level="project" />
     <orderEntry type="library" name="node_modules ember_sample1" level="project" />
     <orderEntry type="library" name="bower_components ember_sample1" level="project" />
+    <orderEntry type="library" name="node_modules ember_upload_excel_sample9_dropzone" level="project" />
+    <orderEntry type="library" name="bower_components ember_upload_excel_sample9_dropzone" level="project" />
   </component>
 </module>
