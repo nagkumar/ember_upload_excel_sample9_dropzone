@@ -1,9 +1,11 @@
 {{outlet}}
 
-eeeee{{controller}}
-eeeeemodel{{model}}
-
-{{x-dropzone url='#' autoProcessQueue=false addRemoveLinks=true success=uponUpload submitBtn=submitBtn}}
+{{x-dropzone url='#' autoProcessQueue=false addRemoveLinks=true vupd="uponUpload" submitBtn=submitBtn}}
 <br/>
 <button type="submit" id={{submitBtn}}>Submit all files</button>
-{{message}}
+
+<br/>
+<br/>
+<br/>
+
+Uploaded File: {{status_message}}

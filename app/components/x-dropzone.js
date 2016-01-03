@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['dropzone'],
+
   insertDropzone: function () {
     this.$().dropzone({
       url: this.get('url'),
@@ -13,8 +14,7 @@ export default Ember.Component.extend({
       previewContainer: false,
 
       success: (file, res) => {
-        //console.log("called.. readload..");
-        //this.sendAction('uponUpload', file, res);
+        this.sendAction('vupd', file, res);
       },
 
       accept: function (file, done) {
@@ -37,7 +37,7 @@ export default Ember.Component.extend({
           alert("Added file.");
         });
         this.on("success",
-          function (file,res) {
+          function (file, res) {
             //console.log("called.. readload.eeeeee alert...");
             alert("Sucessfully uploaded file." + file.name);
           });
