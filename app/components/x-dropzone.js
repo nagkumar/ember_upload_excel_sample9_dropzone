@@ -4,7 +4,8 @@ export default Ember.Component.extend({
   classNames: ['dropzone'],
 
   insertDropzone: function () {
-    this.$().dropzone({
+    var compRef = this;
+    var ram = this.$().dropzone({
       url: this.get('url'),
       maxFiles: 1,
       acceptedFiles: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
@@ -38,11 +39,10 @@ export default Ember.Component.extend({
         });
         this.on("success",
           function (file, res) {
-            //console.log("called.. readload.eeeeee alert...");
             alert("Sucessfully uploaded file." + file.name);
           });
 
-        document.querySelector("button[id=submit-up1]").addEventListener("click", function (e) {
+        document.querySelector("button[id=" + compRef.submitBtn + "]").addEventListener("click", function (e) {
           e.preventDefault();
           e.stopPropagation();
           myDropzone.processQueue();
