@@ -1,5 +1,9 @@
 {{outlet}}
 
-{{x-dropzone url='/api/uploadFile' addRemoveLinks=true}}
+eeeee{{controller}}
+eeeeemodel{{model}}
+
+{{x-dropzone url='#' autoProcessQueue=false addRemoveLinks=true success=uponUpload submitBtn=submitBtn}}
 <br/>
-<button id='submit-up1'>Submit all files</button>
+<button type="submit" id={{submitBtn}}>Submit all files</button>
+{{message}}
