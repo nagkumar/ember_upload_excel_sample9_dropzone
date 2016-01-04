@@ -1,6 +1,6 @@
 {{outlet}}
 
-{{x-dropzone url='#' autoProcessQueue=false addRemoveLinks=true vupd="uponUpload" submitBtn=submitBtn}}
+{{x-dropzone url='/api/uploadFile' autoProcessQueue=false addRemoveLinks=true vupd="uponUpload" submitBtn=submitBtn}}
 <br/>
 <button type="submit" id={{submitBtn}}>Submit all files</button>
 
@@ -12,7 +12,7 @@ Uploaded File: {{status_message}}
 
 
 
-{{x-dropzone url='#' autoProcessQueue=false addRemoveLinks=true vupd="uponUpload" submitBtn=submitBtn2}}
+{{x-dropzone url='/api/uploadFile' autoProcessQueue=false addRemoveLinks=true vupd="uponUpload" submitBtn=submitBtn2}}
 <br/>
 <button type="submit" id={{submitBtn2}}>Submit all files</button>
 
