@@ -13,6 +13,12 @@ export default Ember.Component.extend({
       autoDiscover: false,
       addRemoveLinks: this.get('addRemoveLinks'),
       previewContainer: false,
+      headers: {
+        //'Authorization': authorizationHeader,
+        // remove Cache-Control and X-Requested-With, to be sent along with the request
+        'Cache-Control': null,
+        'X-Requested-With': null
+      },
 
       success: (file, res) => {
         this.sendAction('vupd', file, res);
