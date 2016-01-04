@@ -41,8 +41,14 @@ export default Ember.Component.extend({
         });
 
         this.on("addedfile", function (file) {
-          alert("Added file.");
+          var acceptedExtensions = ["xlsx", "xls"];
+          var selectedFileExt=file.name.split('.').pop();
+          if (Ember.$.inArray(selectedFileExt, acceptedExtensions) === -1) {
+            this.removeFile(file);
+            alert("Please upload only Excel !");
+          }
         });
+
         this.on("success",
           function (file, res) {
             alert("Sucessfully uploaded file." + file.name);
