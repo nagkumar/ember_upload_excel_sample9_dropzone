@@ -36,6 +36,7 @@ export default Ember.Component.extend({
       },
 
       init: function () {
+        Dropzone.autoDiscover = false;
         var myDropzone = this;
         this.on("maxfilesexceeded", function (file) {
           this.removeAllFiles();
