@@ -12,7 +12,9 @@ export default Ember.Component.extend({
       autoProcessQueue: this.get('autoProcessQueue'),
       autoDiscover: false,
       addRemoveLinks: this.get('addRemoveLinks'),
+      dictDefaultMessage: this.get('dictDefaultMessage'),
       previewContainer: false,
+      clickable: true,
       headers: {
         //'Authorization': authorizationHeader,
         // remove Cache-Control and X-Requested-With, to be sent along with the request
@@ -42,12 +44,17 @@ export default Ember.Component.extend({
 
         this.on("addedfile", function (file) {
           var acceptedExtensions = ["xlsx", "xls"];
-          var selectedFileExt=file.name.split('.').pop();
+          var selectedFileExt = file.name.split('.').pop();
           if (Ember.$.inArray(selectedFileExt, acceptedExtensions) === -1) {
             this.removeFile(file);
             alert("Please upload only Excel !");
           }
         });
+
+        //var selectFile = document.getElementById("SelectFile");
+        //selectFile.addEventListener("click", function () {
+        //  myDropzone.hiddenFileInput.click();
+        //});
 
         this.on("success",
           function (file, res) {

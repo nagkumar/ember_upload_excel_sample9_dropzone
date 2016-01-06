@@ -1,4 +1,9 @@
-html, body
-{
+html, body {
   margin: 20px;
+}
+
+DIV.container {
+  min-height: 10em;
+  display: table-cell;
+  vertical-align: middle
 }
