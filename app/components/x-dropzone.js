@@ -10,11 +10,10 @@ export default Ember.Component.extend({
       maxFiles: 1,
       acceptedFiles: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       autoProcessQueue: this.get('autoProcessQueue'),
-      autoDiscover: false,
       addRemoveLinks: this.get('addRemoveLinks'),
-      dictDefaultMessage: "<b>drop here.test</b><br></br><button type='button' id='SelectFile'>Choose File</button>",
+      dictDefaultMessage: "<b>drop here.test</b><br></br><button type='button' id='SelectFL'>Choose File</button>",
       previewContainer: false,
-      clickable: true,
+      clickable: true, //"#SelectFL";
       headers: {
         //'Authorization': authorizationHeader,
         // remove Cache-Control and X-Requested-With, to be sent along with the request
