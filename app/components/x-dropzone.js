@@ -5,13 +5,13 @@ export default Ember.Component.extend({
 
   insertDropzone: function () {
     var compRef = this;
-    var ram = this.$().dropzone({
+    var dropZoneRef = this.$().dropzone({
       url: this.get('url'),
       maxFiles: 1,
       acceptedFiles: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       autoProcessQueue: this.get('autoProcessQueue'),
       addRemoveLinks: this.get('addRemoveLinks'),
-      dictDefaultMessage: "<b>drop here.test</b><br></br><button type='button' id='SelectFL'>Choose File</button>",
+      dictDefaultMessage: "<b>drop here.test</b><br><button type='button' id='SelectFL'>Choose File</button>",
       clickable: "#SelectFL",
       previewContainer: false,
 
@@ -23,11 +23,25 @@ export default Ember.Component.extend({
       },
 
       success: (file, res) => {
-        this.sendAction('vupd', file, res);
+        this.sendAction('vupdSuccess', file, res);
+      },
+
+      error: function(file, response) {
+        var message;
+        if(Ember.$.type(response) === "string")
+        {
+          message = response;
+        }
+        else
+        {
+          message = response.message;
+        }
+
+        this.sendAction('vupdError', file, message);
       },
 
       accept: function (file, done) {
-        if (file.name === "ram.raj") {
+        if (file.name === "excludedFileName") {
           done("Naha, you don't.");
         }
         else {

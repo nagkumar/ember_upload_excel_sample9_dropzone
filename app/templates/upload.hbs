@@ -1,6 +1,6 @@
 {{outlet}}
 
-{{x-dropzone url='/api/uploadFile' autoProcessQueue=false  addRemoveLinks=true vupd="uponUpload" submitBtn=submitBtn}}
+{{x-dropzone url='/api/uploadFile' autoProcessQueue=false  addRemoveLinks=true vupdSuccess="uponUploadSuccess" vupdError="uponUploadError" submitBtn=submitBtn}}
 <br/>
 <button type="submit" id={{submitBtn}}>Submit all files</button>
 <br/>
