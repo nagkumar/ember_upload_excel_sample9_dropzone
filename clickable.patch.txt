@@ -1,0 +1,38 @@
+Index: bower_components/dropzone/dist/dropzone.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- bower_components/dropzone/dist/dropzone.js	(revision )
++++ bower_components/dropzone/dist/dropzone.js	(revision )
+@@ -456,13 +456,7 @@
+           this.previewsContainer = this.element;
+         }
+       }
+-      if (this.options.clickable) {
+-        if (this.options.clickable === true) {
+-          this.clickableElements = [this.element];
+-        } else {
+-          this.clickableElements = Dropzone.getElements(this.options.clickable, "clickable");
+-        }
+-      }
++
+       this.init();
+     }
+ 
+@@ -538,6 +532,15 @@
+       if (this.element.classList.contains("dropzone") && !this.element.querySelector(".dz-message")) {
+         this.element.appendChild(Dropzone.createElement("<div class=\"dz-default dz-message\"><span>" + this.options.dictDefaultMessage + "</span></div>"));
+       }
++
++      if (this.options.clickable) {
++        if (this.options.clickable === true) {
++          this.clickableElements = [this.element];
++        } else {
++          this.clickableElements = Dropzone.getElements(this.options.clickable, "clickable");
++        }
++      }
++
+       if (this.clickableElements.length) {
+         setupHiddenFileInput = (function(_this) {
+           return function() {

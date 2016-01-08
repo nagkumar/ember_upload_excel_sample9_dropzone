@@ -12,8 +12,9 @@ export default Ember.Component.extend({
       autoProcessQueue: this.get('autoProcessQueue'),
       addRemoveLinks: this.get('addRemoveLinks'),
       dictDefaultMessage: "<b>drop here.test</b><br></br><button type='button' id='SelectFL'>Choose File</button>",
+      clickable: "#SelectFL",
       previewContainer: false,
-      clickable: true, //"#SelectFL";
+
       headers: {
         //'Authorization': authorizationHeader,
         // remove Cache-Control and X-Requested-With, to be sent along with the request
@@ -56,10 +57,9 @@ export default Ember.Component.extend({
         //  myDropzone.hiddenFileInput.click();
         //});
 
-        this.on("success",
-          function (file, res) {
-            alert("Sucessfully uploaded file." + file.name);
-          });
+        this.on("success", function (file, res) {
+          alert("Sucessfully uploaded file." + file.name);
+        });
 
         document.querySelector("button[id=" + compRef.submitBtn + "]").addEventListener("click", function (e) {
           e.preventDefault();
