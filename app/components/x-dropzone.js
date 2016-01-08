@@ -12,7 +12,7 @@ export default Ember.Component.extend({
       autoProcessQueue: this.get('autoProcessQueue'),
       autoDiscover: false,
       addRemoveLinks: this.get('addRemoveLinks'),
-      dictDefaultMessage: this.get('dictDefaultMessage'),
+      dictDefaultMessage: "<b>drop here.test</b><br></br><button type='button' id='SelectFile'>Choose File</button>",
       previewContainer: false,
       clickable: true,
       headers: {
