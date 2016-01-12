@@ -8,8 +8,8 @@ export default Ember.Route.extend({
     },
 
     uponUploadError: function (file, message) {
-      Ember.Logger.info('uponUpload', file);
-      this.controllerFor('upload').set('status_message',message);
+      Ember.Logger.info('uponUploadError', file);
+      this.controllerFor('upload').set('status_message', message);
     }
   }
 });
