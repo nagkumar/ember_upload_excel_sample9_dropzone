@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   insertDropzone: function () {
     var compRef = this;
-    var dropZoneRef = this.$().dropzone({
+    this.$().dropzone({
       url: this.get('url'),
       maxFiles: 1,
       acceptedFiles: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
