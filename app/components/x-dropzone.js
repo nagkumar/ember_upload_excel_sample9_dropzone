@@ -8,7 +8,7 @@ export default Ember.Component.extend({
     this.$().dropzone({
       url: this.get('url'),
       maxFiles: 1,
-      acceptedFiles: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,.xlsx,.xls',
+      acceptedFiles: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       autoProcessQueue: this.get('autoProcessQueue'),
       addRemoveLinks: this.get('addRemoveLinks'),
       dictDefaultMessage: "<b>drop here.test</b><br><button type='button' id='SelectFL'>Choose File</button>",
