@@ -55,6 +55,10 @@ export default Ember.Component.extend({
           setFilesStatusChanged(compRef, myDropzone);
         });
 
+        this.on("uploadprogress", function () {
+          setFilesStatusChanged(compRef, myDropzone);
+        });
+
         this.on("success", function (file, response) {
           compRef.sendAction('vupdSuccess', file, response);
           setFilesStatusChanged(compRef, myDropzone);
