@@ -1,0 +1,37 @@
+{{yield}}
+
+<div class="grid-table">
+    <div class="table-header">
+        <div class="row">
+            <div class="col-md-6 col-sm-4">
+                File Name
+            </div>
+            <div class="col-sm-2">
+                Size/Progress
+            </div>
+
+            <div class="col-sm-2">
+                Date
+            </div>
+        </div>
+    </div>
+
+value:  {{files}}
+
+  {{#each dropzoneRef.files as |file| }}
+      <div>
+          <div class="row">
+              <div class="col-md-6 col-sm-4">
+                  {{file}}
+              </div>
+              <div class="col-sm-2">
+                  eee
+              </div>
+
+              <div class="col-sm-2">
+                  Date
+              </div>
+          </div>
+      </div>
+  {{/each}}
+</div>

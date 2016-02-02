@@ -12,6 +12,7 @@
     "jquery": "1.11.3",
     "loader.js": "ember-cli/loader.js#3.4.0",
     "qunit": "~1.20.0",
-    "dropzone": "https://github.com/nagkumar/patcheddz.git"
+    "dropzone": "https://github.com/nagkumar/patcheddz.git",
+    "bootstrap": "~3.3.5"
   }
 }
