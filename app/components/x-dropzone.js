@@ -1,5 +1,9 @@
 import Ember from 'ember';
 
+function setFilesStatusChanged(compRef, myDropzone) {
+  compRef.sendAction("filesStatusChanged", myDropzone.files);
+}
+
 export default Ember.Component.extend({
   classNames: ['dropzone'],
 
@@ -13,7 +17,7 @@ export default Ember.Component.extend({
       addRemoveLinks: this.get('addRemoveLinks'),
       dictDefaultMessage: "<b>drop here.test</b><br><button type='button' id='SelectFL'>Choose File</button>",
       clickable: "#SelectFL",
-      previewContainer: false,
+      previewsContainer: "#preview",
 
       headers: {
         'Cache-Control': null,
@@ -30,6 +34,8 @@ export default Ember.Component.extend({
           myDropzone.processQueue();
         });
 
+        compRef.parentController.set("dropZoneRef", myDropzone);
+
         this.on("maxfilesexceeded", function (file) {
           this.removeAllFiles();
           this.addFile(file);
@@ -42,12 +48,20 @@ export default Ember.Component.extend({
             this.removeFile(file);
             alert("Please upload only Excel !");
           }
+          setFilesStatusChanged(compRef, myDropzone);
         });
+
+        this.on("removedfile", function () {
+          setFilesStatusChanged(compRef, myDropzone);
+        });
+
         this.on("success", function (file, response) {
           compRef.sendAction('vupdSuccess', file, response);
+          setFilesStatusChanged(compRef, myDropzone);
         });
         this.on("error", function (file, response) {
           compRef.sendAction('vupdError', file, response);
+          setFilesStatusChanged(compRef, myDropzone);
         });
       }
     });

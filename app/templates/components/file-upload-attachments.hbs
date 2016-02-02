@@ -1,5 +1,4 @@
 {{yield}}
-
 <div class="grid-table">
     <div class="table-header">
         <div class="row">
@@ -16,20 +15,16 @@
         </div>
     </div>
 
-value:  {{files}}
-
-  {{#each dropzoneRef.files as |file| }}
+  {{#each parentController.files as |file| }}
       <div>
           <div class="row">
               <div class="col-md-6 col-sm-4">
-                  {{file}}
+                {{file.name}}
               </div>
               <div class="col-sm-2">
-                  eee
+                {{file.size}}
               </div>
-
               <div class="col-sm-2">
-                  Date
               </div>
           </div>
       </div>
