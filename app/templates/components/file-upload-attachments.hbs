@@ -27,7 +27,9 @@
                   {{aFile.size}}
                 </div>
             {{else}}
-                <progress min="0" max="100" value="{{aFile.progressIndex}}"></progress>
+                <div class="col-md-6 col-sm-4">
+                    <progress min="0" max="100" value="{{aFile.progressIndex}}"></progress>
+                </div>
             {{/if}}
           </div>
       </div>
