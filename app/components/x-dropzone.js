@@ -55,7 +55,7 @@ export default Ember.Component.extend({
           setFilesStatusChanged(compRef, myDropzone);
         });
 
-        this.on("uploadprogress", function () {
+        this.on("totaluploadprogress", function () {
           setFilesStatusChanged(compRef, myDropzone);
         });
 

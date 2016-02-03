@@ -19,13 +19,14 @@ export default Ember.Controller.extend({
         var obj = aFiles[i];
         this.files.addObject({
           name: obj.name,
+          progressIndex: obj.upload.progress,
           isProgressHide: is100Percent.call(this, obj),
           size: obj.size
         });
       }
 
-      console.log(JSON.stringify(aFiles));
-      //console.log(JSON.stringify(this.files));
+      //console.log(JSON.stringify(aFiles));
+      console.log(JSON.stringify(this.files));
     }
   }
 });
