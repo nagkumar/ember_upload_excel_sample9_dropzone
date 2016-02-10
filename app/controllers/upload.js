@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
 
   actions: {
     filesStatusChanged: function (aFiles) {
-      Ember.Logger.info('files', aFiles);
+      console.log(JSON.stringify(aFiles));
       this.files.clear();
       for (var i = 0; i < aFiles.length; i++) {
         var obj = aFiles[i];
@@ -24,9 +24,6 @@ export default Ember.Controller.extend({
           size: obj.size
         });
       }
-
-      //console.log(JSON.stringify(aFiles));
-      console.log(JSON.stringify(this.files));
     }
   }
 });
