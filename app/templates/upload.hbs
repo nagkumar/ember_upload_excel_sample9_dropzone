@@ -23,7 +23,7 @@ Uploaded File: {{status_message}}
                         File Name
                     </div>
                     <div class='col-sm-2'>
-                        Size
+                        Size (KB)
                     </div>
                     <div class='col-sm-2'>
                         Progress
@@ -35,13 +35,14 @@ Uploaded File: {{status_message}}
               {{#each serverFiles as |aServerFile|}}
                   <div class='dz-image'>
                       <div class='col-md-6 col-sm-4'>
-                          {{aServerFile.name}}
+                        {{aServerFile.name}}
                       </div>
                       <div class='col-sm-2'>
-                        {{aServerFile.upload.total}} KB
+                        {{math aServerFile.upload.total '/' 1024}}
                       </div>
                       <div class='col-sm-2'>
-                          <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress="" style="width: 100%;"></span></div>
+                          <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""
+                                                         style="width: 100%;"></span></div>
                       </div>
                       <div class='col-sm-2'>
                           <button type="button" class="btn btn-default btn-lg" {{action 'deleteFile' aServerFile }} >

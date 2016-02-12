@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
   },
     {
       "name": "book11.xlsx",
-      "upload": {"progress": 100, "total": 8990, "bytesSent": 8990},
+      "upload": {"progress": 100, "total": 7990, "bytesSent": 8990},
       "status": "success",
       "previewElement": {},
       "previewTemplate": {},
@@ -34,7 +34,7 @@ export default Ember.Controller.extend({
     },
     {
       "name": "book12.xlsx",
-      "upload": {"progress": 100, "total": 8990, "bytesSent": 8990},
+      "upload": {"progress": 100, "total": 890, "bytesSent": 8990},
       "status": "success",
       "previewElement": {},
       "previewTemplate": {},
