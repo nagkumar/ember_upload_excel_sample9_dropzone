@@ -1,6 +1,6 @@
 {{outlet}}
 
-{{x-dropzone url='/api/uploadFile' autoProcessQueue=true  addRemoveLinks=true vupdSuccess="uponUploadSuccess" vupdError="uponUploadError" submitBtn=submitBtn filesStatusChanged='filesStatusChanged' parentController=controller}}
+{{x-dropzone url='/api/uploadFile' autoProcessQueue=false  addRemoveLinks=true vupdSuccess="uponUploadSuccess" vupdError="uponUploadError" submitBtn=submitBtn filesStatusChanged='filesStatusChanged' parentController=controller}}
 
 <br/>
 <button type="submit" id={{submitBtn}}>Submit all files</button>
@@ -32,6 +32,24 @@ Uploaded File: {{status_message}}
                         Actions
                     </div>
                 </div>
+              {{#each serverFiles as |aServerFile|}}
+                  <div class='dz-image'>
+                      <div class='col-md-6 col-sm-4'>
+                          {{aServerFile.name}}
+                      </div>
+                      <div class='col-sm-2'>
+                        {{aServerFile.upload.total}} KB
+                      </div>
+                      <div class='col-sm-2'>
+                          <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress="" style="width: 100%;"></span></div>
+                      </div>
+                      <div class='col-sm-2'>
+                          <button type="button" class="btn btn-default btn-lg" {{action 'deleteFile' aServerFile }} >
+                              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                          </button>
+                      </div>
+                  </div>
+              {{/each}}
             </div>
         </div>
     </div>

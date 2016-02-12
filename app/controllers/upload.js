@@ -10,8 +10,45 @@ export default Ember.Controller.extend({
   status_message: "",
   dropZoneRef: "",
   files: [],
+  serverFiles: [{
+    "name": "book1.xlsx",
+    "upload": {"progress": 100, "total": 8990, "bytesSent": 8990},
+    "status": "success",
+    "previewElement": {},
+    "previewTemplate": {},
+    "_removeLink": {},
+    "accepted": true,
+    "processing": true,
+    "xhr": {}
+  },
+    {
+      "name": "book11.xlsx",
+      "upload": {"progress": 100, "total": 8990, "bytesSent": 8990},
+      "status": "success",
+      "previewElement": {},
+      "previewTemplate": {},
+      "_removeLink": {},
+      "accepted": true,
+      "processing": true,
+      "xhr": {}
+    },
+    {
+      "name": "book12.xlsx",
+      "upload": {"progress": 100, "total": 8990, "bytesSent": 8990},
+      "status": "success",
+      "previewElement": {},
+      "previewTemplate": {},
+      "_removeLink": {},
+      "accepted": true,
+      "processing": true,
+      "xhr": {}
+    }],
 
   actions: {
+    deleteFile: function (aFile) {
+      this.serverFiles.removeObject(aFile);
+    },
+
     filesStatusChanged: function (aFiles) {
       console.log(JSON.stringify(aFiles));
       this.files.clear();
