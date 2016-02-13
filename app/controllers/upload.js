@@ -44,9 +44,12 @@ export default Ember.Controller.extend({
       "xhr": {}
     }],
 
+  mergedFiles: Ember.computed.union('serverFiles', 'files'),
+
   actions: {
     deleteFile: function (aFile) {
       this.serverFiles.removeObject(aFile);
+      Ember.Logger.info("mergedFiles",this.get('mergedFiles'));
     },
 
     filesStatusChanged: function (aFiles) {
@@ -61,6 +64,7 @@ export default Ember.Controller.extend({
           size: obj.size
         });
       }
+      Ember.Logger.info("filesStatusChanged",this.get('mergedFiles'));
     }
   }
 });
