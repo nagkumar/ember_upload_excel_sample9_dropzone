@@ -11,7 +11,8 @@ export default Ember.Component.extend({
     var compRef = this;
     this.$().dropzone({
       url: this.get('url'),
-      maxFiles: 3,
+      maxFiles: this.get('maxFiles'),
+      uploadMultiple:this.get('uploadMultiple'),
       acceptedFiles: 'application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
       autoProcessQueue: this.get('autoProcessQueue'),
       addRemoveLinks: this.get('addRemoveLinks'),
