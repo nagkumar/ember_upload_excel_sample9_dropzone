@@ -23,7 +23,7 @@ Uploaded File: {{status_message}}
                         File Name
                     </div>
                     <div class='col-sm-2'>
-                        Size (KB)
+                        Size
                     </div>
                     <div class='col-sm-2'>
                         Progress
@@ -38,7 +38,7 @@ Uploaded File: {{status_message}}
                         {{aServerFile.name}}
                       </div>
                       <div class='col-sm-2'>
-                        {{math aServerFile.upload.total '/' 1024}}
+                        {{math aServerFile.upload.total '/' 1024}} KB
                       </div>
                       <div class='col-sm-2'>
                           <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""
@@ -62,11 +62,13 @@ Uploaded File: {{status_message}}
             <div class='col-md-6 col-sm-4'>
                 <div class='dz-filename'><span data-dz-name></span></div>
             </div>
-            <div class='col-sm-2 xyz'>
-                <div class='dz-size'><span data-dz-size></span></div>
-            </div>
-            <div class='col-sm-2'>
-                <div class='dz-progress'><span class='dz-upload' data-dz-uploadprogress></span></div>
+            <div>
+                <div class='col-sm-2 xyz'>
+                    <div class='dz-size'><span data-dz-size></span></div>
+                </div>
+                <div class='col-sm-2'>
+                    <div class='dz-progress'><span class='dz-upload' data-dz-uploadprogress></span></div>
+                </div>
             </div>
             <div class='col-sm-2'>
                 <div class='dz-dz-remove'>
