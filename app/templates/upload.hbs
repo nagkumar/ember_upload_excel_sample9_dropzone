@@ -1,6 +1,6 @@
 {{outlet}}
 
-{{x-dropzone url='/api/uploadFile' maxFiles=5 autoProcessQueue=true addRemoveLinks=true vupdSuccess="uponUploadSuccess" vupdError="uponUploadError" submitBtn=submitBtn filesStatusChanged='filesStatusChanged' parentController=controller}}
+{{x-dropzone url='/api/uploadFile' maxFiles=5 autoProcessQueue=false addRemoveLinks=true vupdSuccess="uponUploadSuccess" vupdError="uponUploadError" submitBtn=submitBtn filesStatusChanged='filesStatusChanged' parentController=controller}}
 
 <br/>
 <button type="submit" id={{submitBtn}}>Submit all files</button>
@@ -62,7 +62,7 @@ Uploaded File: {{status_message}}
             <div class='col-md-6 col-sm-4'>
                 <div class='dz-filename'><span data-dz-name></span></div>
             </div>
-            <div class='col-sm-2'>
+            <div class='col-sm-2 xyz'>
                 <div class='dz-size'><span data-dz-size></span></div>
             </div>
             <div class='col-sm-2'>
