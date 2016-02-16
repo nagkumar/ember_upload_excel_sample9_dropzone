@@ -18,61 +18,62 @@ Uploaded File: {{status_message}}
     <div class='table-header'>
         <div id="preview" class="dz-preview">
             <div class='row dz-preview dz-file-preview'>
-                <div class='dz-image'>
-                    <div class='col-md-6 col-sm-4'>
-                        File Name
-                    </div>
-                    <div class='col-sm-2'>
-                        Size
-                    </div>
-                    <div class='col-sm-2'>
-                        Progress
-                    </div>
-                    <div class='col-sm-2'>
-                        Actions
-                    </div>
+                <div class='col-sm-2'>
+                    File Name
                 </div>
-              {{#each serverFiles as |aServerFile|}}
-                  <div class='dz-image'>
-                      <div class='col-md-6 col-sm-4'>
-                        {{aServerFile.name}}
-                      </div>
-                      <div class='col-sm-2'>
-                       <strong>{{math aServerFile.upload.total '/' 1024}}</strong> KB
-                      </div>
-                      <div class='col-sm-2'>
-                          <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""
-                                                         style="width: 100%;"></span></div>
-                      </div>
-                      <div class='col-sm-2'>
-                          <button type="button" class="btn btn-default btn-lg" {{action 'deleteFile' aServerFile }} >
-                              <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                          </button>
-                      </div>
-                  </div>
-              {{/each}}
+                <div class='col-sm-2'>
+                    Size
+                </div>
+                <div class='col-sm-2'>
+                    Uploaded Date
+                </div>
+                <div class='col-sm-2'>
+                    Uploaded By
+                </div>
+                <div class='col-sm-2'>
+                    Actions
+                </div>
             </div>
+          {{#each serverFiles as |aServerFile|}}
+              <div class='row dz-preview dz-file-preview'>
+                  <div class='col-sm-2'>
+                    {{aServerFile.name}}
+                  </div>
+                  <div class='col-sm-2'>
+                      <strong>{{math aServerFile.upload.total '/' 1024}}</strong> KB
+                  </div>
+                  <div class='col-sm-2'>
+                      <!--<div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""-->
+                      <!--style="width: 100%;"></span></div>-->
+                  </div>
+                  <div class='col-sm-2'>
+                  </div>
+                  <div class='col-sm-2'>
+                      <button type="button" class="btn btn-default btn-lg" {{action 'deleteFile' aServerFile }} >
+                          <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                      </button>
+                  </div>
+              </div>
+          {{/each}}
         </div>
     </div>
 </div>
 
 <div class="previewTemplateCustom">
     <div class='row dz-preview dz-file-preview'>
-        <div class='dz-image'>
-            <div class='col-md-6 col-sm-4'>
-                <div class='dz-filename'><span data-dz-name></span></div>
-            </div>
-            <div>
-                <div class='col-sm-2 xyz'>
-                    <div class='dz-size'><span data-dz-size></span></div>
-                </div>
-                <div class='col-sm-2'>
-                    <div class='dz-progress'><span class='dz-upload' data-dz-uploadprogress></span></div>
-                </div>
-            </div>
-            <div class='col-sm-2'>
-                <div class='dz-dz-remove'>
-                </div>
+        <div class='col-sm-2'>
+            <div class='dz-filename'><span data-dz-name></span></div>
+        </div>
+        <div class='col-sm-2 xyz'>
+            <div class='dz-size'><span data-dz-size></span></div>
+        </div>
+        <div class='col-sm-2'>
+            <div class='dz-progress'><span class='dz-upload' data-dz-uploadprogress></span></div>
+        </div>
+        <div class='col-sm-2 xyz'>
+        </div>
+        <div class='col-sm-2'>
+            <div class='dz-dz-remove'>
             </div>
         </div>
     </div>
